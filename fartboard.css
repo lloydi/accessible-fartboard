@@ -1,4 +1,5 @@
-  body {font-family: sans-serif;text-align: center;}
+  body {font-family: sans-serif;}
+  main {text-align: center;}
   .visually-hidden {clip-path: inset(100%);clip: rect(1px, 1px, 1px, 1px);height: 1px;overflow: hidden;position: absolute;white-space: nowrap;width: 1px;}
   .grid {background: #ffe6cc;padding: 2em;display: grid;grid-gap: 1rem;}
   @supports (width: min(250px, 100%)) {.grid {grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));}}
