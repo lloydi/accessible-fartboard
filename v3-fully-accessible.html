@@ -13,14 +13,17 @@
 <body>
  <main>
   <h1>SteveSounds - An Accessible Steve Faulkner Soundboard</h1>
-  <fieldset role="radiogroup" aria-describedby="why-delay">
-    <legend>Add a delay after pressing button</legend>
-    <div><input type="radio" name="delay" value="0" id="delay0" checked> <label for="delay0">No delay</label></div>
-    <div><input type="radio" name="delay" value="1" id="delay1"> <label for="delay1">1 second</label></div>
-    <div><input type="radio" name="delay" value="2" id="delay2"> <label for="delay2">2 seconds</label></div>
-    <div><input type="radio" name="delay" value="3" id="delay3"> <label for="delay3">3 seconds</label></div>
-    <p id="why-delay">The time delay may be useful for screen reader users so that the button name/description does not clash/overlap with sounds</p>
-  </fieldset>
+  <details>
+    <summary>Delay sound?</summary>
+    <fieldset role="radiogroup" aria-describedby="why-delay">
+      <legend>Add a delay after pressing button</legend>
+      <div><input type="radio" name="delay" value="0" id="delay0" checked> <label for="delay0">No delay</label></div>
+      <div><input type="radio" name="delay" value="1" id="delay1"> <label for="delay1">1 second</label></div>
+      <div><input type="radio" name="delay" value="2" id="delay2"> <label for="delay2">2 seconds</label></div>
+      <div><input type="radio" name="delay" value="3" id="delay3"> <label for="delay3">3 seconds</label></div>
+      <p id="why-delay">The time delay may be useful for screen reader users so that the button name/description does not clash/overlap with sounds</p>
+    </fieldset>
+  </details>
   <div class="steve grid">
     <div>
       <button type="button" id="steve01" aria-describedby="steveDesc01">
