@@ -1,4 +1,7 @@
 let delayTime=0;
+const captionViewer = document.querySelector('#caption-viewer');
+let timeout;
+
 function sayIt(whichSteveSound){
  const audio = new Audio("sounds/" + whichSteveSound +".mp3");
  audio.play();
@@ -10,18 +13,19 @@ Array.from(steveButtons).forEach(steveButton => {
   checkDelay();
   setTimeout(function(){sayIt(whichSteveSound)}, (delayTime*1000));
   //show caption
-  const soundbiteIDref = steveButton.getAttribute("aria-describedBy")
-  const soundbite = document.querySelector("#" + soundbiteIDref).textContent.trim();
-  updateStatus(soundbite);
+  if (captionViewer){
+   const soundbiteIDref = steveButton.getAttribute("aria-describedBy")
+   const soundbite = document.querySelector("#" + soundbiteIDref).textContent.trim();
+   updateStatus(soundbite);
+  }
  });
 });
 
 function checkDelay(){
- delayTime = document.querySelector("[name='delay']:checked").value;
+ if(document.querySelector("[name='delay']")) {
+  delayTime = document.querySelector("[name='delay']:checked").value;
+ }
 }
-
-var captionViewer = document.querySelector('#caption-viewer');
-let timeout;
 
 function updateStatus(soundbite){
   captionViewer.innerHTML=soundbite;
